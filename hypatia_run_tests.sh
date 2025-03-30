@@ -13,8 +13,7 @@ cd .. || exit 1
 
 # ns3-sat-sim
 echo "Running tests for ns3-sat-sim..."
-cd ns3-sat-sim || exit 1
-bash build.sh --debug_all || exit 1
+cd ns3-sat-sim || exit
 bash test.sh || exit 1
 cd .. || exit 1
 

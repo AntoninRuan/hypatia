@@ -197,6 +197,11 @@ def generate_satellite_trajectories():
     :return: viz_string
     """
     viz_string = ""
+    displayed_sat = 0
+    viz_string += "const sat = new Cesium.EllipsoidGraphics(" \
+        "{radii : new Cesium.Cartesian3(30000.0, 30000.0, 30000.0)," \
+        "material : Cesium.Color.BLACK.withAlpha(1)" \
+        "});\n"
     for i in range(0, SHELL_CNTR):
         sat_objs = util.generate_sat_obj_list(
             NUM_ORBS[i],
@@ -209,14 +214,20 @@ def generate_satellite_trajectories():
             MEAN_MOTION_REV_PER_DAY[i],
             ALTITUDE_M[i]
         )
+        # for j in range(len(sat_objs)):
+        to_display = min(len(sat_objs), 2445555555)
+        displayed_sat += to_display
         for j in range(len(sat_objs)):
             sat_objs[j]["sat_obj"].compute(EPOCH)
-            viz_string += "var redSphere = viewer.entities.add({name : '', position: Cesium.Cartesian3.fromDegrees(" \
-                          + str(math.degrees(sat_objs[j]["sat_obj"].sublong)) + ", " \
-                          + str(math.degrees(sat_objs[j]["sat_obj"].sublat)) + ", " + str(
-                sat_objs[j]["alt_km"] * 1000) + "), " \
-                          + "ellipsoid : {radii : new Cesium.Cartesian3(30000.0, 30000.0, 30000.0), " \
-                          + "material : Cesium.Color.BLACK.withAlpha(1),}});\n"
+            lon = math.degrees(sat_objs[j]["sat_obj"].sublong)
+            lat = math.degrees(sat_objs[j]["sat_obj"].sublat)
+            # print(f"long={lon},lat={lat}")
+            if j < to_display:
+                viz_string += "viewer.entities.add({name : '', position: Cesium.Cartesian3.fromDegrees(" \
+                    + str(math.degrees(sat_objs[j]["sat_obj"].sublong)) + ", " \
+                    + str(math.degrees(sat_objs[j]["sat_obj"].sublat)) + ", " + str(
+                        sat_objs[j]["alt_km"] * 1000) + "), " \
+                        + "ellipsoid : sat});\n"
         orbit_links = util.find_orbit_links(sat_objs, NUM_ORBS[i], NUM_SATS_PER_ORB[i])
         for key in orbit_links:
             sat1 = orbit_links[key]["sat1"]
@@ -231,7 +242,9 @@ def generate_satellite_trajectories():
                           + "width: 0.5, arcType: Cesium.ArcType.NONE, " \
                           + "material: new Cesium.PolylineOutlineMaterialProperty({ " \
                           + "color: Cesium.Color."+COLOR[i]+".withAlpha(0.4), outlineWidth: 0, outlineColor: Cesium.Color.BLACK})}});"
+    print(f"displayed: {displayed_sat}")
     return viz_string
+
 
 
 def write_viz_files():
@@ -248,5 +261,5 @@ def write_viz_files():
     writer_html.close()
 
 
-viz_string = generate_satelite_trajectories()
+viz_string = generate_satellite_trajectories()
 write_viz_files()
