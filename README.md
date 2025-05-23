@@ -8,41 +8,41 @@ Hypatia is a low earth orbit (LEO) satellite network simulation framework. It pr
 
 It consists of four main components:
 
-* `satgenpy` : Python framework to generate LEO satellite networks and generate 
-  routing over time over a period of time. It additionally includes several 
+* `satgenpy` : Python framework to generate LEO satellite networks and generate
+  routing over time over a period of time. It additionally includes several
   analysis tools to study individual cases. It makes use of several Python modules
-  among which: numpy, astropy, ephem, networkx, sgp4, geopy, matplotlib, 
+  among which: numpy, astropy, ephem, networkx, sgp4, geopy, matplotlib,
   statsmodels, cartopy (and its dependent (data) packages: libproj-dev, proj-data,
   proj-bin, libgeos-dev), and exputil.
   More information can be found in `satgenpy/README.md`.
   (license: MIT)
 
-* `ns3-sat-sim` : ns-3 based framework which takes as input the state generated 
+* `ns3-sat-sim` : ns-3 based framework which takes as input the state generated
   by `satgenpy` to perform packet-level simulations over LEO satellite networks.
   It makes use of the [`satellite`](https://gitlab.inesctec.pt/pmms/ns3-satellite)
   ns-3 module by Pedro Silva to calculate satellite locations over time.
-  It uses the [`basic-sim`](https://github.com/snkas/basic-sim/tree/3b32597c183e1039be7f0bede17d36d354696776) 
+  It uses the [`basic-sim`](https://github.com/snkas/basic-sim/tree/3b32597c183e1039be7f0bede17d36d354696776)
   ns-3 module to make e.g., running end-to-end TCP flows easier, which makes use of several Python
   modules (e.g., numpy, statsmodels, exputil) as well as several other packages (e.g., OpenMPI, lcov, gnuplot).
   More information can be found in `ns3-sat-sim/README.md`.
   (license: GNU GPL version 2)
-  
+
 * `satviz` : Cesium visualization pipeline to generate interactive satellite network
   visualizations. It makes use of the online Cesium API by generating CesiumJS code.
   The API calls require its user to obtain a Cesium access token (via [https://cesium.com/]()).
   More information can be found in `satviz/README.md`.
   (license: MIT)
 
-* `paper` : Experimental and plotting code to reproduce the experiments and 
+* `paper` : Experimental and plotting code to reproduce the experiments and
   figures which are presented in the paper.
   It makes use of several Python modules among which: satgenpy, numpy, networkload, and exputil.
   It uses the gnuplot package for most of its plotting.
   More information can be found in `paper/README.md`.
   (license: MIT)
-  
+
 (there is a fifth folder called `integration_tests` which is used for integration testing purposes)
 
-This is the code repository introduced and used in "Exploring the “Internet from space” with Hypatia" 
+This is the code repository introduced and used in "Exploring the “Internet from space” with Hypatia"
 by Simon Kassing*, Debopam Bhattacherjee*, André Baptista Águas, Jens Eirik Saethre and Ankit Singla
 (*equal contribution), which is published in the Internet Measurement Conference (IMC) 2020.
 
@@ -59,19 +59,19 @@ BibTeX citation:
 ## Getting started
 
 1. System setup:
-   - Python version 3.7+
-   - Recent Linux operating system (e.g., Ubuntu 18+)
+   - Python version between 3.7 and 3.10
+   - Recent Linux operating system (Installation scripts only works for Ubuntu/Debian as the use apt to install some dependencies but it can be easily replace with the distributions of your choice)
 
 2. Install dependencies:
    ```
    bash hypatia_install_dependencies.sh
    ```
-   
+
 3. Build all four modules (as far as possible):
    ```
    bash hypatia_build.sh
    ```
-   
+
 4. Run tests:
    ```
    bash hypatia_run_tests.sh
