@@ -24,7 +24,7 @@ import exputil
 import time
 
 local_shell = exputil.LocalShell()
-max_num_processes = 6
+max_num_processes = 32
 
 # Check that no screen is running
 if local_shell.count_screens() != 0:
@@ -104,28 +104,68 @@ commands_to_run.append("cd ../../satgenpy; python -m satgen.post_analysis.main_p
                        "> ../paper/satgenpy_analysis/data/command_logs/"
                        "manual_graphical_kuiper_gs_relay_1156_to_1232.log"
                        " 2>&1")
-
-
-# Paris (1608) to Luanda (1650) with only ISLs on Starlink
 commands_to_run.append("cd ../../satgenpy; python -m satgen.post_analysis.main_print_routes_and_rtt "
                        "../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
-                       "starlink_550_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls "
-                       "100 200 1608 1650 "
-                       "> ../paper/satgenpy_analysis/data/command_logs/manual_starlink_isls_1608_to_1650.log 2>&1")
+                       "kuiper_630_isls_none_ground_stations_paris_moscow_grid_algorithm_free_one_only_gs_relays "
+                       "100 200 1156 1232 "
+                       "> ../paper/satgenpy_analysis/data/command_logs/manual_kuiper_isls_1156_to_1232.log 2>&1")
+
 commands_to_run.append("cd ../../satgenpy; python -m satgen.post_analysis.main_print_graphical_routes_and_rtt "
                        "../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
-                       "starlink_550_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls "
-                       "100 200 1608 1650 "
-                       "> ../paper/satgenpy_analysis/data/command_logs/manual_graphical_starlink_isls_1608_to_1650.log"
+                       "kuiper_630_isls_none_ground_stations_paris_moscow_grid_algorithm_free_one_only_gs_relays "
+                       "100 200 1156 1232 "
+                       "> ../paper/satgenpy_analysis/data/command_logs/"
+                       "manual_graphical_kuiper_gs_relay_1156_to_1232.log"
+                       " 2>&1")
+
+
+# Tokyo (351) to Paris (375) with only ISLs on Telesat
+commands_to_run.append("cd ../../satgenpy; python -m satgen.post_analysis.main_print_routes_and_rtt "
+                       "../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
+                       "telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls "
+                       "100 200 351 375 "
+                       "> ../paper/satgenpy_analysis/data/command_logs/manual_telesat_isls_375_to_363.log 2>&1")
+commands_to_run.append("cd ../../satgenpy; python -m satgen.post_analysis.main_print_graphical_routes_and_rtt "
+                       "../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
+                       "telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls "
+                       "100 200 351 375 "
+                       "> ../paper/satgenpy_analysis/data/command_logs/manual_graphical_telesat_isls_375_to_363.log"
+                       " 2>&1")
+
+# Los Angeles (371) to Lima (380) with only ISLs on Telesat
+commands_to_run.append("cd ../../satgenpy; python -m satgen.post_analysis.main_print_routes_and_rtt "
+                       "../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
+                       "telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls "
+                       "100 200 371 380 "
+                       "> ../paper/satgenpy_analysis/data/command_logs/manual_telesat_isls_375_to_363.log 2>&1")
+
+# Kinshasa (373) to Tianjin (374) with only ISLs on Telesat
+commands_to_run.append("cd ../../satgenpy; python -m satgen.post_analysis.main_print_routes_and_rtt "
+                       "../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
+                       "telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls "
+                       "100 200 373 374 "
+                       "> ../paper/satgenpy_analysis/data/command_logs/manual_telesat_isls_375_to_363.log 2>&1")
+
+# Sao Paulo (354) to Buenos Aires (363) with only ISLs on Telesat
+commands_to_run.append("cd ../../satgenpy; python -m satgen.post_analysis.main_print_routes_and_rtt "
+                       "../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
+                       "telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls "
+                       "100 200 354 363 "
+                       "> ../paper/satgenpy_analysis/data/command_logs/manual_telesat_isls_375_to_363.log 2>&1")
+commands_to_run.append("cd ../../satgenpy; python -m satgen.post_analysis.main_print_graphical_routes_and_rtt "
+                       "../paper/satgenpy_analysis/data ../paper/satellite_networks_state/gen_data/"
+                       "telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls "
+                       "100 200 354 363 "
+                       "> ../paper/satgenpy_analysis/data/command_logs/manual_graphical_telesat_isls_375_to_363.log"
                        " 2>&1")
 
 
 # Constellation comparison
 print("Generating commands for constellation comparison...")
 for satgenpy_generated_constellation in [
-    "kuiper_630_isls_none_ground_stations_paris_moscow_grid_algorithm_free_one_only_gs_relays",
-    "kuiper_630_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls",
-    "starlink_550_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls",
+    # "kuiper_630_isls_none_ground_stations_paris_moscow_grid_algorithm_free_one_only_gs_relays",
+    # "kuiper_630_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls",
+    # "starlink_550_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls",
     "telesat_1015_isls_plus_grid_ground_stations_top_100_algorithm_free_one_only_over_isls"
 ]:
     for duration_s in [200]:

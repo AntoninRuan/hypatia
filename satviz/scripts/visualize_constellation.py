@@ -101,79 +101,77 @@ BASE_ID[4] = 3959
 ORB_WISE_IDS[4] = []
 
 
-"""
-# TELESAT
-NAME = "Telesat"
-SHELL_CNTR = 2
 
-MEAN_MOTION_REV_PER_DAY = [None]*SHELL_CNTR
-ALTITUDE_M = [None]*SHELL_CNTR
-NUM_ORBS = [None]*SHELL_CNTR
-NUM_SATS_PER_ORB = [None]*SHELL_CNTR
-INCLINATION_DEGREE = [None]*SHELL_CNTR
-BASE_ID = [None]*SHELL_CNTR
-ORB_WISE_IDS = [None]*SHELL_CNTR
+# # TELESAT
+# NAME = "Telesat"
+# SHELL_CNTR = 2
 
-MEAN_MOTION_REV_PER_DAY[0] = 13.66  # Altitude ~1015 km
-ALTITUDE_M[0] = 1015000  # Altitude ~1015 km
-NUM_ORBS[0] = 27
-NUM_SATS_PER_ORB[0] = 13
-INCLINATION_DEGREE[0] = 98.98
-BASE_ID[0] = 0
-ORB_WISE_IDS[0] = []
+# MEAN_MOTION_REV_PER_DAY = [None]*SHELL_CNTR
+# ALTITUDE_M = [None]*SHELL_CNTR
+# NUM_ORBS = [None]*SHELL_CNTR
+# NUM_SATS_PER_ORB = [None]*SHELL_CNTR
+# INCLINATION_DEGREE = [None]*SHELL_CNTR
+# BASE_ID = [None]*SHELL_CNTR
+# ORB_WISE_IDS = [None]*SHELL_CNTR
 
-MEAN_MOTION_REV_PER_DAY[1] = 12.84  # Altitude ~1325 km
-ALTITUDE_M[1] = 1325000  # Altitude ~1325 km
-NUM_ORBS[1] = 40
-NUM_SATS_PER_ORB[1] = 33
-INCLINATION_DEGREE[1] = 50.88
-BASE_ID[1] = 351
-ORB_WISE_IDS[1] = []
-"""
+# MEAN_MOTION_REV_PER_DAY[0] = 13.66  # Altitude ~1015 km
+# ALTITUDE_M[0] = 1015000  # Altitude ~1015 km
+# NUM_ORBS[0] = 27
+# NUM_SATS_PER_ORB[0] = 13
+# INCLINATION_DEGREE[0] = 98.98
+# BASE_ID[0] = 0
+# ORB_WISE_IDS[0] = []
 
-"""
-# KUIPER
-NAME = "kuiper"
-################################################################
-# The below constants are taken from Kuiper's FCC filing as below:
-# [1]: https://www.itu.int/ITU-R/space/asreceived/Publication/DisplayPublication/8716
-################################################################
+# MEAN_MOTION_REV_PER_DAY[1] = 12.84  # Altitude ~1325 km
+# ALTITUDE_M[1] = 1325000  # Altitude ~1325 km
+# NUM_ORBS[1] = 40
+# NUM_SATS_PER_ORB[1] = 33
+# INCLINATION_DEGREE[1] = 50.88
+# BASE_ID[1] = 351
+# ORB_WISE_IDS[1] = []
 
-SHELL_CNTR = 3
 
-MEAN_MOTION_REV_PER_DAY = [None]*SHELL_CNTR
-ALTITUDE_M = [None]*SHELL_CNTR
-NUM_ORBS = [None]*SHELL_CNTR
-NUM_SATS_PER_ORB = [None]*SHELL_CNTR
-INCLINATION_DEGREE = [None]*SHELL_CNTR
-BASE_ID = [None]*SHELL_CNTR
-ORB_WISE_IDS = [None]*SHELL_CNTR
 
-MEAN_MOTION_REV_PER_DAY[0] = 14.80  # Altitude ~630 km
-ALTITUDE_M[0] = 630000  # Altitude ~630 km
-NUM_ORBS[0] = 34
-NUM_SATS_PER_ORB[0] = 34
-INCLINATION_DEGREE[0] = 51.9
-BASE_ID[0] = 0
-ORB_WISE_IDS[0] = []
+# # KUIPER
+# NAME = "kuiper"
+# ################################################################
+# # The below constants are taken from Kuiper's FCC filing as below:
+# # [1]: https://www.itu.int/ITU-R/space/asreceived/Publication/DisplayPublication/8716
+# ################################################################
 
-MEAN_MOTION_REV_PER_DAY[1] = 14.86  # Altitude ~610 km
-ALTITUDE_M[1] = 610000  # Altitude ~610 km
-NUM_ORBS[1] = 36
-NUM_SATS_PER_ORB[1] = 36
-INCLINATION_DEGREE[1] = 42
-BASE_ID[1] = 1156
-ORB_WISE_IDS[1] = []
+# SHELL_CNTR = 3
 
-MEAN_MOTION_REV_PER_DAY[2] = 14.93  # Altitude ~590 km
-ALTITUDE_M[2] = 590000  # Altitude ~590 km
-NUM_ORBS[2] = 28
-NUM_SATS_PER_ORB[2] = 28
-INCLINATION_DEGREE[2] = 33
-BASE_ID[2] = 2452
-ORB_WISE_IDS[2] = []
-"""
+# MEAN_MOTION_REV_PER_DAY = [None]*SHELL_CNTR
+# ALTITUDE_M = [None]*SHELL_CNTR
+# NUM_ORBS = [None]*SHELL_CNTR
+# NUM_SATS_PER_ORB = [None]*SHELL_CNTR
+# INCLINATION_DEGREE = [None]*SHELL_CNTR
+# BASE_ID = [None]*SHELL_CNTR
+# ORB_WISE_IDS = [None]*SHELL_CNTR
 
+# MEAN_MOTION_REV_PER_DAY[0] = 14.80  # Altitude ~630 km
+# ALTITUDE_M[0] = 630000  # Altitude ~630 km
+# NUM_ORBS[0] = 34
+# NUM_SATS_PER_ORB[0] = 34
+# INCLINATION_DEGREE[0] = 51.9
+# BASE_ID[0] = 0
+# ORB_WISE_IDS[0] = []
+
+# MEAN_MOTION_REV_PER_DAY[1] = 14.86  # Altitude ~610 km
+# ALTITUDE_M[1] = 610000  # Altitude ~610 km
+# NUM_ORBS[1] = 36
+# NUM_SATS_PER_ORB[1] = 36
+# INCLINATION_DEGREE[1] = 42
+# BASE_ID[1] = 1156
+# ORB_WISE_IDS[1] = []
+
+# MEAN_MOTION_REV_PER_DAY[2] = 14.93  # Altitude ~590 km
+# ALTITUDE_M[2] = 590000  # Altitude ~590 km
+# NUM_ORBS[2] = 28
+# NUM_SATS_PER_ORB[2] = 28
+# INCLINATION_DEGREE[2] = 33
+# BASE_ID[2] = 2452
+# ORB_WISE_IDS[2] = []
 
 # General files needed to generate visualizations; Do not change for different simulations
 topFile = "../static_html/top.html"
